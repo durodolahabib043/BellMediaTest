@@ -9,18 +9,6 @@ import UIKit
 
 class CarFilterCell: UITableViewCell {
     
-    
-    //    let containerView: [UIView] = [upImageView, voteContText, downImageView]
-    //    let fullStackView = UIStackView(arrangedSubviews: containerView)
-    //    fullStackView.axis = .vertical
-    //    fullStackView.alignment = .fill
-    //    fullStackView.distribution = .fill
-    //    fullStackView.spacing = 5
-    //    fullStackView.translatesAutoresizingMaskIntoConstraints = false
-    //
-    //    titleContainer.addSubview(fullStackView)
-    
-    
     var filterLabel: UILabel = {
         let filterLabel = UILabel()
         filterLabel.text = "Filter "

@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     private var sectionsData: [Section<SectionType>] = []
     private var expandedIndexPath: IndexPath?
     let cellIndentifier = "cellId"
+    let separatorCellIndentifier = "separatorCellIndentifier" // move to cell
     
     
     init(carViewModel: CarViewModelling = CarViewModel()){
@@ -67,6 +68,7 @@ class ViewController: UIViewController {
         tableView.tableHeaderView = header
         
         tableView.register(CarCell.self, forCellReuseIdentifier: cellIndentifier)
+        tableView.register(SeparatorCell.self, forCellReuseIdentifier: separatorCellIndentifier)
         
         
         NSLayoutConstraint.activate([
@@ -110,6 +112,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             cell.configure(data: data)
             return cell
             
+        case .SeparationSection:
+            let cell = tableView.dequeueReusableCell(withIdentifier: separatorCellIndentifier, for: indexPath) as! SeparatorCell
+            return cell
         }
     }
     

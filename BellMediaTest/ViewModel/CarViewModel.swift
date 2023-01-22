@@ -27,7 +27,7 @@ class CarViewModel : CarViewModelling {
         switch result {
         case .success(let car):
             print("\(car.count)")
-            var cars = getListOfCars(car: car)
+            let cars = getListOfCars(car: car)
             displaySectionData?([.init(rows: cars)
                                 ])
         case .failure(let err):
@@ -37,11 +37,12 @@ class CarViewModel : CarViewModelling {
     }
     
     func getListOfCars(car: [Car])-> [SectionType] {
-        return   car.map{(
-            SectionType.CarSection(data: .init(carName: $0.model, carPrice: "\($0.customerPrice / 1000)K", carImage: $0.image, isExpanded: false, carRating: Double($0.rating), carProsList: $0.prosList, carConsList: $0.consList))
-        )}
+        
+       return car.flatMap({
+            [  SectionType.CarSection(data: .init(carName: $0.model, carPrice: "\($0.customerPrice / 1000)K", carImage: $0.image, isExpanded: false, carRating: Double($0.rating), carProsList: $0.prosList, carConsList: $0.consList)), SectionType.SeparationSection]
+        })
     }
-    
+       
 }
 
 struct Section<T> {
@@ -51,4 +52,5 @@ struct Section<T> {
 
 enum SectionType {
     case CarSection(data: CarCell.Data)
+    case SeparationSection
 }

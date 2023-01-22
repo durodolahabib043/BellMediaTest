@@ -15,4 +15,5 @@ struct Car: Codable {
     let model: String
     let prosList: [String]
     let rating: Int
+    let image: String
 }

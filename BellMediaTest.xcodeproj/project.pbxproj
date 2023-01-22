@@ -10,7 +10,6 @@
 		4F54386E297C65F30077507C /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54386D297C65F30077507C /* Car.swift */; };
 		4F543870297C66C30077507C /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54386F297C66C30077507C /* CarService.swift */; };
 		4F543872297C68CE0077507C /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F543871297C68CE0077507C /* CarViewModel.swift */; };
-		4F543875297C6B0C0077507C /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F543874297C6B0C0077507C /* car_list.json */; };
 		4F543878297C6B240077507C /* BMW_330i.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F543876297C6B240077507C /* BMW_330i.jpg */; };
 		4F543879297C6B240077507C /* Alpine_roadster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F543877297C6B240077507C /* Alpine_roadster.jpg */; };
 		4F54387B297C6B300077507C /* Guidomia.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F54387A297C6B300077507C /* Guidomia.png */; };
@@ -22,6 +21,7 @@
 		4F70952A297C9AE0003B20D5 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F709529297C9AE0003B20D5 /* CarCell.swift */; };
 		4F709531297C9D3F003B20D5 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 4F709530297C9D3F003B20D5 /* Cosmos */; };
 		4F709534297C9D81003B20D5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4F709533297C9D81003B20D5 /* Kingfisher */; };
+		4F709536297D7B48003B20D5 /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F709535297D7B47003B20D5 /* car_list.json */; };
 		4FFB8155297C145400C419D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB8154297C145400C419D8 /* AppDelegate.swift */; };
 		4FFB8159297C145400C419D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB8158297C145400C419D8 /* ViewController.swift */; };
 		4FFB815E297C145700C419D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFB815D297C145700C419D8 /* Assets.xcassets */; };
@@ -51,7 +51,6 @@
 		4F54386D297C65F30077507C /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		4F54386F297C66C30077507C /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
 		4F543871297C68CE0077507C /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
-		4F543874297C6B0C0077507C /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 		4F543876297C6B240077507C /* BMW_330i.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BMW_330i.jpg; sourceTree = "<group>"; };
 		4F543877297C6B240077507C /* Alpine_roadster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Alpine_roadster.jpg; sourceTree = "<group>"; };
 		4F54387A297C6B300077507C /* Guidomia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guidomia.png; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		4F709525297C7A19003B20D5 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		4F709527297C8BC9003B20D5 /* CarFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterCell.swift; sourceTree = "<group>"; };
 		4F709529297C9AE0003B20D5 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		4F709535297D7B47003B20D5 /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 		4FFB8151297C145400C419D8 /* BellMediaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BellMediaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFB8154297C145400C419D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FFB8158297C145400C419D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		4F543873297C6AEE0077507C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4F543874297C6B0C0077507C /* car_list.json */,
+				4F709535297D7B47003B20D5 /* car_list.json */,
 				4F543877297C6B240077507C /* Alpine_roadster.jpg */,
 				4F543876297C6B240077507C /* BMW_330i.jpg */,
 				4F54387A297C6B300077507C /* Guidomia.png */,
@@ -330,8 +330,8 @@
 				4F54387B297C6B300077507C /* Guidomia.png in Resources */,
 				4F54387D297C6B380077507C /* Mercedez_benz_GLC.jpg in Resources */,
 				4F543881297C6B430077507C /* Tacoma.jpg in Resources */,
-				4F543875297C6B0C0077507C /* car_list.json in Resources */,
 				4FFB815E297C145700C419D8 /* Assets.xcassets in Resources */,
+				4F709536297D7B48003B20D5 /* car_list.json in Resources */,
 				4F543878297C6B240077507C /* BMW_330i.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

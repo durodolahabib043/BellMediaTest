@@ -38,7 +38,7 @@ class CarViewModel : CarViewModelling {
     
     func getListOfCars(car: [Car])-> [SectionType] {
         return   car.map{(
-            SectionType.CarSection(data: .init(carName: $0.make, carPrice: $0.model, isExpanded: false))
+            SectionType.CarSection(data: .init(carName: $0.make, carPrice: $0.model, carImage: $0.image, isExpanded: false))
         )}
     }
     

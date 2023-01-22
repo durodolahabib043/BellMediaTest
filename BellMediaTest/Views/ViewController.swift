@@ -9,7 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let tableView = UITableView()
+    var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 300
+        return tableView
+        
+    }()
     let carViewModel: CarViewModelling
     
     private var sectionsData: [Section<SectionType>] = []
@@ -35,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     func getCarList() {
-    
+        
         carViewModel.displaySectionData = { [weak self] sectionData in
             self?.sectionsData = sectionData
             DispatchQueue.main.async {
@@ -48,6 +55,7 @@ class ViewController: UIViewController {
         }
     }
     
+ 
     private func configureView(){
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)

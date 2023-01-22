@@ -36,7 +36,6 @@ class HeaderCell: UIView {
     }()
     var titleContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

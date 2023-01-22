@@ -13,13 +13,14 @@ class ViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 300
+        tableView.estimatedRowHeight = 750
         return tableView
         
     }()
     let carViewModel: CarViewModelling
     
     private var sectionsData: [Section<SectionType>] = []
+    private var expandedIndexPath: IndexPath?
     let cellIndentifier = "cellId"
     
     
@@ -110,6 +111,34 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             return cell
             
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = self.sectionsData[indexPath.section].rows[indexPath.row]
+        
+        switch row {
+        case var .CarSection(data: data):
+            print(data.carName)
+            
+            // If we tapped a car item, then toggle the isExpanded property
+            data.isExpanded.toggle()
+            self.sectionsData[indexPath.section].rows[indexPath.row] = .CarSection(data: data)//.car(item: item)
+            // We need to collapse the previously expanded item
+            if let expandedIndexPath = self.expandedIndexPath, expandedIndexPath != indexPath {
+                let previousExpandedRow = self.sectionsData[expandedIndexPath.section].rows[expandedIndexPath.row]
+                switch previousExpandedRow {
+                case var .CarSection(data: data):
+                    data.isExpanded = false
+                    self.sectionsData[expandedIndexPath.section].rows[expandedIndexPath.row] = .CarSection(data: data)
+                default: break
+                }
+            }
+            // Reload the updated rows
+            tableView.reloadRows(at: [indexPath, expandedIndexPath].compactMap({ $0 }), with: .automatic)
+            self.expandedIndexPath = data.isExpanded ? indexPath : nil
+        default: break
+        }
+      
     }
     
 }

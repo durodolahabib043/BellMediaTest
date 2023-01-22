@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,11 @@
 		4F54387D297C6B380077507C /* Mercedez_benz_GLC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F54387C297C6B380077507C /* Mercedez_benz_GLC.jpg */; };
 		4F543880297C6B430077507C /* Range_Rover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F54387E297C6B430077507C /* Range_Rover.jpg */; };
 		4F543881297C6B430077507C /* Tacoma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F54387F297C6B430077507C /* Tacoma.jpg */; };
+		4F709526297C7A19003B20D5 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F709525297C7A19003B20D5 /* HeaderCell.swift */; };
+		4F709528297C8BC9003B20D5 /* CarFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F709527297C8BC9003B20D5 /* CarFilterCell.swift */; };
+		4F70952A297C9AE0003B20D5 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F709529297C9AE0003B20D5 /* CarCell.swift */; };
+		4F709531297C9D3F003B20D5 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 4F709530297C9D3F003B20D5 /* Cosmos */; };
+		4F709534297C9D81003B20D5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4F709533297C9D81003B20D5 /* Kingfisher */; };
 		4FFB8155297C145400C419D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB8154297C145400C419D8 /* AppDelegate.swift */; };
 		4FFB8159297C145400C419D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB8158297C145400C419D8 /* ViewController.swift */; };
 		4FFB815E297C145700C419D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFB815D297C145700C419D8 /* Assets.xcassets */; };
@@ -53,6 +58,9 @@
 		4F54387C297C6B380077507C /* Mercedez_benz_GLC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mercedez_benz_GLC.jpg; sourceTree = "<group>"; };
 		4F54387E297C6B430077507C /* Range_Rover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Range_Rover.jpg; sourceTree = "<group>"; };
 		4F54387F297C6B430077507C /* Tacoma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tacoma.jpg; sourceTree = "<group>"; };
+		4F709525297C7A19003B20D5 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		4F709527297C8BC9003B20D5 /* CarFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterCell.swift; sourceTree = "<group>"; };
+		4F709529297C9AE0003B20D5 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		4FFB8151297C145400C419D8 /* BellMediaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BellMediaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFB8154297C145400C419D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FFB8158297C145400C419D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F709534297C9D81003B20D5 /* Kingfisher in Frameworks */,
+				4F709531297C9D3F003B20D5 /* Cosmos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +105,7 @@
 		4F543869297C654E0077507C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4F709524297C79BA003B20D5 /* TableCell */,
 				4FFB8158297C145400C419D8 /* ViewController.swift */,
 			);
 			path = Views;
@@ -136,6 +147,16 @@
 				4F54387F297C6B430077507C /* Tacoma.jpg */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		4F709524297C79BA003B20D5 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				4F709525297C7A19003B20D5 /* HeaderCell.swift */,
+				4F709527297C8BC9003B20D5 /* CarFilterCell.swift */,
+				4F709529297C9AE0003B20D5 /* CarCell.swift */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 		4FFB8148297C145300C419D8 = {
@@ -208,6 +229,10 @@
 			dependencies = (
 			);
 			name = BellMediaTest;
+			packageProductDependencies = (
+				4F709530297C9D3F003B20D5 /* Cosmos */,
+				4F709533297C9D81003B20D5 /* Kingfisher */,
+			);
 			productName = BellMediaTest;
 			productReference = 4FFB8151297C145400C419D8 /* BellMediaTest.app */;
 			productType = "com.apple.product-type.application";
@@ -279,6 +304,10 @@
 				Base,
 			);
 			mainGroup = 4FFB8148297C145300C419D8;
+			packageReferences = (
+				4F70952F297C9D3F003B20D5 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				4F709532297C9D81003B20D5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 4FFB8152297C145400C419D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -328,10 +357,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F709528297C8BC9003B20D5 /* CarFilterCell.swift in Sources */,
 				4FFB8159297C145400C419D8 /* ViewController.swift in Sources */,
 				4FFB8155297C145400C419D8 /* AppDelegate.swift in Sources */,
 				4F543872297C68CE0077507C /* CarViewModel.swift in Sources */,
 				4F543870297C66C30077507C /* CarService.swift in Sources */,
+				4F709526297C7A19003B20D5 /* HeaderCell.swift in Sources */,
+				4F70952A297C9AE0003B20D5 /* CarCell.swift in Sources */,
 				4F54386E297C65F30077507C /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,6 +691,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F70952F297C9D3F003B20D5 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = exactVersion;
+				version = 23.0.0;
+			};
+		};
+		4F709532297C9D81003B20D5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F709530297C9D3F003B20D5 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F70952F297C9D3F003B20D5 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+		4F709533297C9D81003B20D5 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F709532297C9D81003B20D5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4FFB8149297C145300C419D8 /* Project object */;
 }

@@ -71,6 +71,7 @@ class ViewController: UIViewController {
         carViewModel.displaySectionData = { [weak self] sectionData in
             self?.sectionsData = sectionData
             DispatchQueue.main.async {
+                self?.expandedIndexPath = IndexPath(row: 0, section: 1)
                 self?.tableView.reloadData()
             }
             

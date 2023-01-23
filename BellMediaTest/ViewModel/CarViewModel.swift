@@ -30,7 +30,7 @@ class CarViewModel : CarViewModelling {
         switch result {
         case .success(let car):
             self.cars = car.map { $0 }
-            let cars = getListOfCars(car: car)
+            let cars = getListOfCars(car: car)// here to get all call
             let refilterCars = getFilteredCar(cars: car)
             displaySectionData?([
                 .init(rows: [refilterCars]),
@@ -44,9 +44,19 @@ class CarViewModel : CarViewModelling {
     
     func getListOfCars(car: [Car])-> [SectionType] {
         
-        return car.flatMap({
+        var mergedCar = car.flatMap({
             [  SectionType.CarSection(data: .init(carName: $0.model, carPrice: "\($0.customerPrice / 1000)K", carImage: $0.image, isExpanded: false, carRating: Double($0.rating), carProsList: $0.prosList, carConsList: $0.consList)), SectionType.SeparationSection]
         })
+        
+        
+        switch mergedCar.first {
+        case var .CarSection(data: data):
+            data.isExpanded = true
+            mergedCar[0] = .CarSection(data: data)
+        default:
+            break
+        }
+        return mergedCar
     }
     
     func getFilteredCar(cars: [Car]) -> SectionType {

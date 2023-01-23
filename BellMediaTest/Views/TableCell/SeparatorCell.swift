@@ -17,7 +17,7 @@ class SeparatorCell: UITableViewCell {
     }()
     var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .orange
+        view.backgroundColor = UIColor().bellOrange
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

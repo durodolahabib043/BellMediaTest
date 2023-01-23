@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     private var sectionsData: [Section<SectionType>] = []
     private var expandedIndexPath: IndexPath?
     let cellIndentifier = "cellId"
-    let separatorCellIndentifier = "separatorCellIndentifier" 
+    let separatorCellIndentifier = "separatorCellIndentifier"
     let filterCellIndentifier = "filterCellIndentifier"
     
     
@@ -38,6 +38,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = "GUIDOMIA"
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor().bellOrange
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         configureView()
         getCarList()
@@ -211,9 +221,9 @@ extension ViewController: FilterCellDelegate {
     func didSelectCarModel(value: String?) {
         carViewModel.didSelectCarModel(make: nil, model: value)
     }
-    }
+}
 
 
 
-    
-    
+
+

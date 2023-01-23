@@ -16,7 +16,7 @@ class BulletPoint: UIView {
     
     var point: UIView = {
         let point = UIView()
-        point.backgroundColor = .blue
+        point.backgroundColor = UIColor().bellOrange
         point.translatesAutoresizingMaskIntoConstraints = false
         return point
     }()

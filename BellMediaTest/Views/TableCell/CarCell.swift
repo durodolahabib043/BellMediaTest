@@ -49,7 +49,7 @@ class CarCell: UITableViewCell {
  
     var container: UIView = {
         let view = UIView()
-        view.backgroundColor = .orange
+        view.backgroundColor = UIColor().bellLightGray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -69,7 +69,6 @@ class CarCell: UITableViewCell {
     
     var prosConsView: UIView = {
         let prosConsView = UIView()
-        prosConsView.backgroundColor = .red
         prosConsView.translatesAutoresizingMaskIntoConstraints = false
         return prosConsView
     }()
@@ -77,7 +76,6 @@ class CarCell: UITableViewCell {
     lazy var prosConsPStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.backgroundColor = .brown
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.spacing = 5.0
         stack.alignment = .fill
@@ -94,7 +92,6 @@ class CarCell: UITableViewCell {
     lazy var  consStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.backgroundColor = .brown
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.spacing = 5.0
         stack.alignment = .fill
@@ -109,7 +106,7 @@ class CarCell: UITableViewCell {
         [self.carImageView,
             self.modelStackView
          ].forEach { upperView.addSubview($0) }
-        upperView.backgroundColor = .gray
+        upperView.backgroundColor = UIColor().bellLightGray
         [self.prosLabel,
             self.prosConsPStackView,
          self.consLabel,

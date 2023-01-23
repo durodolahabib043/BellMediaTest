@@ -166,18 +166,12 @@ extension CarFilterCell : UIPickerViewDataSource, UIPickerViewDelegate {
         switch pickerView {
         case self.carMakePickerView:
             self.carMakerTextField.text = self.carMakes?[row]
-            guard let carMaker = self.carMakes?[row] else {
-                return
-            }
             self.carMakerTextField.resignFirstResponder()
-            self.delegate?.didSelectCarMake(value: carMaker)
+            self.delegate?.didSelectCarMake(value: self.carMakes?[row])
         case self.carModelPickerView:
             self.carModelTextField.text = self.carModels?[row]
-            guard let model = self.carModels?[row] else {
-                return
-            }
             self.carModelTextField.resignFirstResponder()
-            self.delegate?.didSelectCarModel(value: model)
+            self.delegate?.didSelectCarModel(value: self.carModels?[row])
         default: break
         }
     }
@@ -190,8 +184,8 @@ extension CarFilterCell {
 }
 
 protocol FilterCellDelegate: AnyObject {
-    func didSelectCarMake(value: String)
-    func didSelectCarModel(value: String)
+    func didSelectCarMake(value: String?)
+    func didSelectCarModel(value: String?)
 }
 
 

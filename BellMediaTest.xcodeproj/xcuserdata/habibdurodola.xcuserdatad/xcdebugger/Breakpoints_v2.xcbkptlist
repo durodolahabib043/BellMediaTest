@@ -23,16 +23,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "234D10E0-070F-4225-8CA1-90840817168E"
+            uuid = "AC2465C1-2293-49EF-B36C-96CC83FD2ED2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BellMediaTest/Views/TableCell/CarFilterCell.swift"
+            filePath = "BellMediaTest/ViewModel/CarViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "configure(data:delegate:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetchCarDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A372DE71-1937-4086-AA21-4C7F162D4210"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BellMediaTest/ViewModel/CarViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "didSelectCarModel(make:model:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

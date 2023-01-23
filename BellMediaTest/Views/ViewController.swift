@@ -209,14 +209,20 @@ extension UITableView {
 }
 
 extension ViewController: FilterCellDelegate {
-    func didSelectCarMake(value: String) {
+    func didSelectCarMake(value: String?) {
+    
        print("this is car maker\(value)")
+        carViewModel.didSelectCarModel(make: value, model: nil)
         
     }
     
-    func didSelectCarModel(value: String) {
+    func didSelectCarModel(value: String?) {
         print("this is car model\(value)")
+        carViewModel.didSelectCarModel(make: nil, model: value)
     }
     }
+
+
+
     
     

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     private var expandedIndexPath: IndexPath?
     let cellIndentifier = "cellId"
     let separatorCellIndentifier = "separatorCellIndentifier" // move to cell
+    let filterCellIndentifier = "filterCellIndentifier"
     
     
     init(carViewModel: CarViewModelling = CarViewModel()){
@@ -41,8 +42,33 @@ class ViewController: UIViewController {
         configureView()
         getCarList()
         
+        // refactor
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
+        
     }
     
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        // Add an inset to the tableview when the keyboard is shown so that nothing is hidden behind
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        // Remove the inset when the keyboard is hidden
+        tableView.contentInset = .zero
+    }
+    //
     func getCarList() {
         
         carViewModel.displaySectionData = { [weak self] sectionData in
@@ -57,7 +83,7 @@ class ViewController: UIViewController {
         }
     }
     
- 
+    
     private func configureView(){
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -69,6 +95,7 @@ class ViewController: UIViewController {
         
         tableView.register(CarCell.self, forCellReuseIdentifier: cellIndentifier)
         tableView.register(SeparatorCell.self, forCellReuseIdentifier: separatorCellIndentifier)
+        tableView.register(CarFilterCell.self, forCellReuseIdentifier: filterCellIndentifier)
         
         
         NSLayoutConstraint.activate([
@@ -115,6 +142,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         case .SeparationSection:
             let cell = tableView.dequeueReusableCell(withIdentifier: separatorCellIndentifier, for: indexPath) as! SeparatorCell
             return cell
+        case let .FilterSection(data: data):
+            let cell = tableView.dequeueReusableCell(withIdentifier: filterCellIndentifier, for: indexPath) as! CarFilterCell
+            cell.configure(data: data, delegate: self)
+            return cell
         }
     }
     
@@ -141,9 +172,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             // Reload the updated rows
             tableView.reloadRows(at: [indexPath, expandedIndexPath].compactMap({ $0 }), with: .automatic)
             self.expandedIndexPath = data.isExpanded ? indexPath : nil
-        default: break
+        default:
+            break
         }
-      
+        
     }
     
 }
@@ -176,4 +208,15 @@ extension UITableView {
     }
 }
 
-
+extension ViewController: FilterCellDelegate {
+    func didSelectCarMake(value: String) {
+       print("this is car maker\(value)")
+        
+    }
+    
+    func didSelectCarModel(value: String) {
+        print("this is car model\(value)")
+    }
+    }
+    
+    

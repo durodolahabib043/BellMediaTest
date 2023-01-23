@@ -10,6 +10,8 @@ import Foundation
 protocol CarViewModelling: AnyObject {
     func fetchCarDetails() async
     var  displaySectionData: ((_ data: [Section<SectionType>]) -> Void)? {get set}
+    func getListOfCars(car: [Car])-> [SectionType]
+    func getFilteredCar(cars: [Car]) -> SectionType
 }
 
 
@@ -28,8 +30,11 @@ class CarViewModel : CarViewModelling {
         case .success(let car):
             print("\(car.count)")
             let cars = getListOfCars(car: car)
-            displaySectionData?([.init(rows: cars)
-                                ])
+            let refilterCars = getFilteredCar(cars: car)
+            displaySectionData?([
+                .init(rows: [refilterCars]),
+                .init(rows: cars)
+            ])
         case .failure(let err):
             print("err") // todo
         }
@@ -37,11 +42,16 @@ class CarViewModel : CarViewModelling {
     }
     
     func getListOfCars(car: [Car])-> [SectionType] {
-        
+       
        return car.flatMap({
             [  SectionType.CarSection(data: .init(carName: $0.model, carPrice: "\($0.customerPrice / 1000)K", carImage: $0.image, isExpanded: false, carRating: Double($0.rating), carProsList: $0.prosList, carConsList: $0.consList)), SectionType.SeparationSection]
         })
     }
+    
+    func getFilteredCar(cars: [Car]) -> SectionType {
+        return .FilterSection(data: .init(carMakes: cars.map({$0.make}), carModels: cars.map({$0.model})))
+    }
+
        
 }
 
@@ -52,5 +62,6 @@ struct Section<T> {
 
 enum SectionType {
     case CarSection(data: CarCell.Data)
+    case FilterSection(data: CarFilterCell.Data)
     case SeparationSection
 }

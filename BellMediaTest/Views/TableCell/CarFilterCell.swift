@@ -17,8 +17,6 @@ class CarFilterCell: UITableViewCell, UITextFieldDelegate {
     var filterLabel: UILabel = {
         let filterLabel = UILabel()
         filterLabel.text = "Filter "
-        // filter.textColor = .white
-        //title.font = UIFont.boldSystemFont(ofSize: 40)
         filterLabel.translatesAutoresizingMaskIntoConstraints = false
         return filterLabel
     }()
@@ -69,13 +67,9 @@ class CarFilterCell: UITableViewCell, UITextFieldDelegate {
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.backgroundColor = .gray
-       // container.addSubview(fullStackView)
         contentView.addSubview(fullStackView)
         
         layer.cornerRadius = 7
-        
-       // container.addSubview(fullStackView)
-        
         NSLayoutConstraint.activate([
             
             ///container
@@ -83,14 +77,7 @@ class CarFilterCell: UITableViewCell, UITextFieldDelegate {
             self.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             self.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             self.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-
-//            fullStackView.topAnchor.constraint(equalTo: container.topAnchor, constant: 5),
-//            fullStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: 5),
-//            fullStackView.trailingAnchor.constraint(equalTo: container.trailingAnchor,constant: -5),
-//            fullStackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -5),
-//
-//
-            
+ 
             fullStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             fullStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 25),
             fullStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -25),
@@ -102,7 +89,6 @@ class CarFilterCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func setupViews() {
-      //  contentView.addSubview(container)
         carMakePickerView.delegate = self
         carModelPickerView.delegate = self
         carMakerTextField.delegate = self

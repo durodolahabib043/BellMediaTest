@@ -22,7 +22,6 @@ class CarCell: UITableViewCell {
     
     var carMakerLabel: UILabel = {
         let carMakerLabel = UILabel()
-        carMakerLabel.text = "carMakerLabel"
         carMakerLabel.translatesAutoresizingMaskIntoConstraints = false
         return carMakerLabel
     }()
@@ -30,7 +29,6 @@ class CarCell: UITableViewCell {
     
     var carPriceLabel: UILabel = {
         let carPriceLabel = UILabel()
-        carPriceLabel.text = "carPriceLabel"
         carPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         return carPriceLabel
     }()
@@ -107,7 +105,7 @@ class CarCell: UITableViewCell {
     
     func setupAutoContrainst() {
         
-        let upperView = UIView() //rename
+        let upperView = UIView() 
         [self.carImageView,
             self.modelStackView
          ].forEach { upperView.addSubview($0) }

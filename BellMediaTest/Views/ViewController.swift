@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     private var sectionsData: [Section<SectionType>] = []
     private var expandedIndexPath: IndexPath?
     let cellIndentifier = "cellId"
-    let separatorCellIndentifier = "separatorCellIndentifier" // move to cell
+    let separatorCellIndentifier = "separatorCellIndentifier" 
     let filterCellIndentifier = "filterCellIndentifier"
     
     
@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         configureView()
         getCarList()
         
-        // refactor
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillShow(notification:)),
@@ -58,14 +57,12 @@ class ViewController: UIViewController {
     
     
     @objc private func keyboardWillShow(notification: NSNotification) {
-        // Add an inset to the tableview when the keyboard is shown so that nothing is hidden behind
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
         }
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
-        // Remove the inset when the keyboard is hidden
         tableView.contentInset = .zero
     }
     //
@@ -155,10 +152,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         switch row {
         case var .CarSection(data: data):
             print(data.carName)
-            
-            // If we tapped a car item, then toggle the isExpanded property
             data.isExpanded.toggle()
-            self.sectionsData[indexPath.section].rows[indexPath.row] = .CarSection(data: data)//.car(item: item)
+            self.sectionsData[indexPath.section].rows[indexPath.row] = .CarSection(data: data)
             // We need to collapse the previously expanded item
             if let expandedIndexPath = self.expandedIndexPath, expandedIndexPath != indexPath {
                 let previousExpandedRow = self.sectionsData[expandedIndexPath.section].rows[expandedIndexPath.row]
@@ -169,7 +164,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
                 default: break
                 }
             }
-            // Reload the updated rows
             tableView.reloadRows(at: [indexPath, expandedIndexPath].compactMap({ $0 }), with: .automatic)
             self.expandedIndexPath = data.isExpanded ? indexPath : nil
         default:
@@ -210,14 +204,10 @@ extension UITableView {
 
 extension ViewController: FilterCellDelegate {
     func didSelectCarMake(value: String?) {
-    
-       print("this is car maker\(value)")
         carViewModel.didSelectCarModel(make: value, model: nil)
-        
     }
     
     func didSelectCarModel(value: String?) {
-        print("this is car model\(value)")
         carViewModel.didSelectCarModel(make: nil, model: value)
     }
     }

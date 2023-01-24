@@ -17,7 +17,7 @@ a. Note, if facing issues - Right click on dependences, then click "Update to la
 
 
 ## App Architecture
-This app uses the MVVM architecture
+This app uses the MVVM architecture and Protocol Oriented Programming
 1. The View - consist of the ViewController, HeaderCell, CarFiltercell, CarCell and SeparatorCel 
 2. ModelView - consist of the CarViewModel
 3. Model - consist of Car

@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var spinner = UIActivityIndicatorView(style: .large)
     var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -82,6 +83,7 @@ class ViewController: UIViewController {
         carViewModel.displaySectionData = { [weak self] sectionData in
             self?.sectionsData = sectionData
             DispatchQueue.main.async {
+                self?.spinner.stopAnimating()
                 self?.expandedIndexPath = IndexPath(row: 0, section: 1)
                 self?.tableView.reloadData()
             }
@@ -94,8 +96,12 @@ class ViewController: UIViewController {
     
     
     private func configureView(){
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tableView)
+        [tableView , spinner].forEach{(view.addSubview($0))}
+        //view.addSubview(tableView)
+       // tableView.addSubview(spinner)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -115,7 +121,10 @@ class ViewController: UIViewController {
             
             header.topAnchor.constraint(equalTo: tableView.topAnchor, constant: 10),
             header.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 10),
-            header.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
+            header.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             
         ])
     }

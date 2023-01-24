@@ -24,6 +24,7 @@ class CarService : CarsProtocol {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
             let cars = try JSONDecoder().decode([Car].self, from: data)
+
             return Result.success(cars)
         } catch {
             return Result.failure(error)

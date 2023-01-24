@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 750
+        tableView.separatorStyle = .none
         return tableView
         
     }()
@@ -139,6 +140,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let row = self.sectionsData[indexPath.section].rows[indexPath.row]
+        
+   
         
         switch row {
         case let .CarSection(data: data):

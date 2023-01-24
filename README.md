@@ -3,7 +3,7 @@
 ## How to run the app 
 1. Download or clone 
 2. Open folder and click on .xcodeproj
-3. App uses SPM, wait a bit till both dependencies is full download. 
+3. App uses SPM, wait a bit till both dependencies is fully download. 
 
 a. Note, if facing issues - Right click on dependences, then click "Update to latest Package"
 

@@ -7,6 +7,9 @@
 
 a. Note, if facing issues - Right click on dependences, then click "Update to latest Package"
 
+## Commit History
+1. Take a look at the develop branch
+
 
 ## App Demo
 ![78l9gr](https://user-images.githubusercontent.com/10080531/214328763-4dcc03ae-f40b-42c3-84f1-2ab09c47737e.gif)

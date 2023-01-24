@@ -1,4 +1,13 @@
 # BellMediaTest
+
+## How to run the app 
+1. Download or clone 
+2. Open folder and click on .xcodeproj
+3. App uses SPM, wait a bit till both dependencies is full download. 
+
+a. Note, if facing issues - Right click on dependences, then click "Update to latest Package"
+
+
 ## App Demo
 ![78l9gr](https://user-images.githubusercontent.com/10080531/214328763-4dcc03ae-f40b-42c3-84f1-2ab09c47737e.gif)
 

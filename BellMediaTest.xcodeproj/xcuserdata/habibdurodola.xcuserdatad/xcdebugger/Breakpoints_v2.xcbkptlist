@@ -30,8 +30,8 @@
             filePath = "BellMediaTest/Views/TableCell/CarFilterCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
-            landmarkName = "CarViewModelMocks"
-            landmarkType = "3">
+            landmarkName = "getFilteredCar(cars:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "BCC48FB1-3746-4830-B54C-06C411E589E3 - 4fb2514976dc6504"
@@ -316,8 +316,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "CarViewModelMocks"
-            landmarkType = "3">
+            landmarkName = "fetchCarDetails()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "44F9F3AF-4331-4F32-A096-4819282392FE - af1dab07a830f3e0"
@@ -516,8 +516,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "displaySectionData"
-            landmarkType = "24">
+            landmarkName = "CarViewModelMocks"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

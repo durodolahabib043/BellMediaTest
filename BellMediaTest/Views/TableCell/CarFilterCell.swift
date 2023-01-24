@@ -46,7 +46,7 @@ class CarFilterCell: UITableViewCell, UITextFieldDelegate {
     
     var container: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = UIColor().bellDarkGray
         view.layer.cornerRadius = 7
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -62,33 +62,30 @@ class CarFilterCell: UITableViewCell, UITextFieldDelegate {
         fullStackView.axis = .vertical
         fullStackView.alignment = .fill
         fullStackView.distribution = .fill
-        fullStackView.spacing = 5
-        backgroundColor = .green
+        fullStackView.spacing = 15
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        contentView.backgroundColor = .gray
-        contentView.addSubview(fullStackView)
+        container.addSubview(fullStackView)
         
         layer.cornerRadius = 7
         NSLayoutConstraint.activate([
             
             ///container
-            self.topAnchor.constraint(equalTo: topAnchor, constant: -10),
-            self.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            self.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            self.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            container.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
  
-            fullStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            fullStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 25),
-            fullStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -25),
-            fullStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-            
-   
+            fullStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            fullStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: 25),
+            fullStackView.trailingAnchor.constraint(equalTo: container.trailingAnchor,constant: -25),
+            fullStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -35),
         ])
         
     }
     
     func setupViews() {
+        contentView.addSubview(container)
         carMakePickerView.delegate = self
         carModelPickerView.delegate = self
         carMakerTextField.delegate = self
